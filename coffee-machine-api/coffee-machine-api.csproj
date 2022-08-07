@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>coffee_machine_api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="MediatR" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="MediatR.Extensions.FluentValidation.AspNetCore" />
+    <None Remove="Domain\" />
+    <None Remove="Application\" />
+    <None Remove="Infrastructure\" />
+    <None Remove="Infrastructure\ServiceCollectionExtensions\" />
+    <None Remove="Application\PipelineBehaviors\" />
+    <None Remove="Application\Exceptions\" />
+    <None Remove="Application\BrewCoffee\" />
+    <None Remove="Application\BrewCoffee\Queries\" />
+    <None Remove="Application\BrewCoffee\Queries\BrewCoffee\" />
+    <None Remove="Application\BrewCoffee\Services\" />
+    <None Remove="Application\BrewCoffee\Interfaces\" />
+    <None Remove="Application\ExceptionFilterAttibutes\" />
+    <None Remove="Application\BrewCoffee\Providers\" />
+    <None Remove="coverlet.collector" />
+    <None Remove="Controllers\Base\" />
+    <None Remove="Application\BrewCoffee\Controllers\" />
+    <None Remove="Infrastructure\MiddlewareExtensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Application\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\ServiceCollectionExtensions\" />
+    <Folder Include="Application\PipelineBehaviors\" />
+    <Folder Include="Application\Exceptions\" />
+    <Folder Include="Application\BrewCoffee\" />
+    <Folder Include="Application\BrewCoffee\Queries\" />
+    <Folder Include="Application\BrewCoffee\Queries\BrewCoffee\" />
+    <Folder Include="Application\BrewCoffee\Services\" />
+    <Folder Include="Application\BrewCoffee\Interfaces\" />
+    <Folder Include="Application\ExceptionFilterAttibutes\" />
+    <Folder Include="Application\BrewCoffee\Providers\" />
+    <Folder Include="Controllers\Base\" />
+    <Folder Include="Application\BrewCoffee\Controllers\" />
+    <Folder Include="Infrastructure\MiddlewareExtensions\" />
+  </ItemGroup>
+</Project>
