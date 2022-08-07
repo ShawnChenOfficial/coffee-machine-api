@@ -31,6 +31,8 @@
     <None Remove="ApplicationTests\BrewCoffee\Services\BrewCoffeeConterService\IsFifthCoffee\" />
     <None Remove="ApplicationTests\PipelineBehavior\" />
     <None Remove="ApplicationTests\PipelineBehavior\ValidationBehavior\" />
+    <None Remove="ApplicationTests\BrewCoffee\Services\WeatherApiService\" />
+    <None Remove="ApplicationTests\BrewCoffee\Services\WeatherApiService\GetTemperature\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ApplicationTests\" />
@@ -42,6 +44,8 @@
     <Folder Include="ApplicationTests\BrewCoffee\Services\BrewCoffeeConterService\IsFifthCoffee\" />
     <Folder Include="ApplicationTests\PipelineBehavior\" />
     <Folder Include="ApplicationTests\PipelineBehavior\ValidationBehavior\" />
+    <Folder Include="ApplicationTests\BrewCoffee\Services\WeatherApiService\" />
+    <Folder Include="ApplicationTests\BrewCoffee\Services\WeatherApiService\GetTemperature\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\coffee-machine-api\coffee-machine-api.csproj" />

@@ -17,6 +17,8 @@ namespace coffee_machine_api.Infrastructure.ServiceCollectionExtensions
         {
             builder.Services.AddSingleton<IBrewCoffeeCounterService, BrewCoffeeCounterService>();
             builder.Services.AddTransient<IDateTimeProvider, DateTimeProvider>();
+            builder.Services.AddTransient<IWeatherService, WeatherService>();
+            builder.Services.AddTransient<IWeatherRequestService, WeatherRequestService>();
             return builder;
         }
 	}

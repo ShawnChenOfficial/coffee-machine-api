@@ -10,10 +10,10 @@ using Moq;
 
 namespace UnitTests.ApplicationTests.PipelineBehavior.ValidationBehavior
 {
-	public class ValidationBehaviorTest
-	{
+    public class ValidationBehaviorTest
+    {
         [Fact]
-		public async void Hanlder_WhenNoValidationFailure_ShouldNotThrowException()
+        public async void Hanlder_WhenNoValidationFailure_ShouldNotThrowException()
         {
             var brewCoffeeCounterService = new Mock<IBrewCoffeeCounterService>().Object;
             var datetimeProvider = new Mock<IDateTimeProvider>().Object;
@@ -27,15 +27,8 @@ namespace UnitTests.ApplicationTests.PipelineBehavior.ValidationBehavior
 
             var mockDelegate = new Mock<RequestHandlerDelegate<Unit>>();
 
-            try
-            {
-                await validationBehaviour.Handle(null!, CancellationToken.None, mockDelegate.Object);
-                Assert.True(true);
-            }
-            catch
-            {
-                Assert.True(false);
-            }
+            var exception = await Record.ExceptionAsync(async () => await validationBehaviour.Handle(null!, CancellationToken.None, mockDelegate.Object));
+            Assert.Null(exception);
         }
 
         [Fact]
@@ -63,7 +56,7 @@ namespace UnitTests.ApplicationTests.PipelineBehavior.ValidationBehavior
                 await validationBehaviour.Handle(null!, CancellationToken.None, mockDelegate.Object);
                 Assert.True(false);
             }
-            catch(StatusCodeBasedValidationException ex)
+            catch (StatusCodeBasedValidationException ex)
             {
                 Assert.True(ex.GetStatusCode() == 503);
                 Assert.True(true);

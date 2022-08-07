@@ -15,7 +15,8 @@ namespace coffee_machine_api.Application.ExceptionFilterAttibutes
             _exceptionHandlers = new Dictionary<Type, Action<ExceptionContext>>
             {
                 { typeof(StatusCodeBasedValidationException), HandleStatusCodeBasedValidationException },
-                { typeof(ValidationException), HandleValidationException }
+                { typeof(ValidationException), HandleValidationException },
+                { typeof(ResourceRequestErrorException), HandlerResourceRequestErrorException }
             };
         }
 
@@ -71,6 +72,18 @@ namespace coffee_machine_api.Application.ExceptionFilterAttibutes
             context.Result = new BadRequestObjectResult(details);
 
             context.ExceptionHandled = true;
+        }
+
+        private void HandlerResourceRequestErrorException(ExceptionContext context)
+        {
+            var exception = (ResourceRequestErrorException)context.Exception;
+
+            var details = new ProblemDetails
+            {
+                Detail = exception.Message
+            };
+
+            context.Result = new NotFoundObjectResult(details);
 
             context.ExceptionHandled = true;
         }
